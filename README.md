@@ -1,3 +1,11 @@
+## 🚀 How to Run This App
+
+1. Clone this repo:
+
+```bash
+git clone https://github.com/alexandramak/vibe-chat-hackathon.git
+cd vibe-chat-hackathon
+
 # Skype-like Chat Application
 
 A full-stack, self-hosted chat application with real-time messaging capabilities.
