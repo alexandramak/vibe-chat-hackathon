@@ -1,124 +1,32 @@
-## 🚀 How to Run This App
+Run Vibe Chat Hackathon App Locally (via Docker)
+You can launch the full app on your machine in just a few steps using Docker and Docker Compose.
 
-1. Clone this repo:
+✅ Prerequisites
+Install Docker Desktop
 
-```bash
+Clone this repository
+
+📦 How to Run
+bash
+Copy
+Edit
+# 1. Clone the repo
 git clone https://github.com/alexandramak/vibe-chat-hackathon.git
 cd vibe-chat-hackathon
 
-# Skype-like Chat Application
+# 2. Create a `.env` file in the root with the following content:
+Paste this in a file named .env (create it manually):
 
-A full-stack, self-hosted chat application with real-time messaging capabilities.
+ini
+Copy
+Edit
+PORT=3000
+DATABASE_URL=postgresql://vibe_chat_db_user:bSV2U7ZbTov7fVTTHCPcHMlAaoNJZwpW@dpg-d0tp58c9c44c739n5pf0-a/vibe_chat_db
+bash
+Copy
+Edit
+# 3. Build and run everything
+docker compose up --build
+The app will be available at:
+👉 http://localhost:3000
 
-## Features
-
-- User registration and login (username/password)
-- Contact management system
-- 1:1 and group chats (up to 300 people)
-- Real-time messaging using WebSocket
-- Message formatting (Markdown)
-- Emoji support
-- Message reactions
-- Image attachments (AWS S3)
-- Full-text message search
-- Deep linking to chats
-- Docker-based deployment
-
-## Tech Stack
-
-- **Backend**: Node.js + Express
-- **Frontend**: React + Tailwind CSS
-- **Database**: PostgreSQL
-- **Real-time**: Socket.io
-- **Storage**: AWS S3
-- **Deployment**: Docker, Docker Compose, AWS ECS
-
-## Prerequisites
-
-- Docker and Docker Compose
-- Node.js 18+
-- AWS Account with configured credentials
-- PostgreSQL (for local development)
-
-## Environment Setup
-
-1. Clone the repository
-2. Copy `.env.example` to `.env` and fill in the required values
-3. Configure AWS credentials
-
-## Local Development
-
-```bash
-# Install dependencies
-npm install
-
-# Start development servers
-docker-compose up -d
-
-# Frontend development server
-cd frontend
-npm run dev
-
-# Backend development server
-cd backend
-npm run dev
-```
-
-## Production Deployment
-
-### Using Docker Compose
-
-```bash
-docker-compose -f docker-compose.prod.yml up -d
-```
-
-### AWS ECS Deployment
-
-1. Configure AWS credentials
-2. Navigate to infra directory
-3. Run Terraform commands:
-
-```bash
-cd infra
-terraform init
-terraform plan
-terraform apply
-```
-
-## Database Schema
-
-The database schema is automatically initialized on startup. See `backend/db/schema.sql` for details.
-
-## API Documentation
-
-API documentation is available at `/api/docs` when running the server.
-
-## Testing
-
-```bash
-# Run backend tests
-cd backend
-npm test
-
-# Run frontend tests
-cd frontend
-npm test
-```
-
-## Development Scripts
-
-- `npm run seed` - Seed the database with test data
-- `npm run lint` - Run linting
-- `npm run build` - Build for production
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a new Pull Request
-
-## License
-
-MIT 
